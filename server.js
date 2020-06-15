@@ -39,7 +39,7 @@ const IN_PROD = NODE_ENV === "Production";
 
 app.use(
   session({
-    name: process.env.SESSION_NAME,
+    name: SESS_NAVE,
     resave: false,
     saveUninitialized: false,
     secret: SESS_SECRET,
