@@ -1,12 +1,28 @@
 import React from 'react';
 import Home from './components/Home'
-import Gopret from './components/Gopret'
 
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import Nav from './components/Nav';
+import Admin from './components/Admin'
+import Godelete from './components/Godelete'
 function App() {
   return (
-    <div className="">
-      <Home/>
-      <Gopret/>
+<div className="App">
+      <BrowserRouter>
+        <Nav />
+
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/Admin' component={Admin} />
+          
+
+          <Route path='/Godelete' component={Godelete} />
+
+
+        </Switch>
+
+
+      </BrowserRouter>
     </div>
   );
 }

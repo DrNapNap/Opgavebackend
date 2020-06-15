@@ -31,7 +31,7 @@ router.get("/:id", getGaader, (req, res) => {
   res.json(res.leGaader);
 });
 
-router.post("/", async (req, res) => {
+router.post("/admin", async (req, res) => {
 
   const gaader = new Gaader({
     gaade: req.body.gaade,
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.delete("/admin/:id", getGaader, async (req, res) => {
+router.delete("/:id", getGaader, async (req, res) => {
   try {
     await res.leGaader.remove();
     res.json({message: "Deleted gaader"})
