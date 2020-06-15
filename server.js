@@ -10,7 +10,6 @@ const TWO_HOURS = 1000 * 60 * 60 * 2;
 const mongoose = require("mongoose");
 
 const MongoStore = require('connect-mongo')(session);
-
 mongoose.connect(process.env.DATABASE_URL_ALAS, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
