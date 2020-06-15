@@ -46,7 +46,7 @@ app.use(
     store:new MongoStore ({mongooseConnection: db}),
     cookie: {
       maxAge: TWO_HOURS,
-    sameSite: true,,
+    sameSite: true,
     secure:false
     },
   })
