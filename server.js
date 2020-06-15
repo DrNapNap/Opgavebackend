@@ -1,4 +1,4 @@
-//require("dotenv").config();
+require("dotenv").config();
 PORT = 3008;
 const cors = require("cors");
 const express = require("express");
@@ -40,6 +40,7 @@ const IN_PROD = NODE_ENV === "Production";
 
 app.use(
   session({
+    secret: 'keyboard cat',
   name: process.env.SESSION_NAME,
   resave:true,
   rolling:true,
