@@ -59,7 +59,7 @@ router.delete("/:id", getGaader, async (req, res) => {
 
 
 
-router.patch("/admin/:id",getGaader , async (req, res)  => {
+router.patch("/:id",getGaader , async (req, res)  => {
   if(req.body.gaade != null){
     res.leGaader.gaade = req.body.gaade;
   }
