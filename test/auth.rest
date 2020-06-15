@@ -1,0 +1,12 @@
+
+POST http://localhost:3008/auth/login
+content-type: application/json
+
+{ 
+     "email": "uudguy@geml.com",
+     "password": "ddwadwa£####4@@@31231HFHFH"
+    }
+###
+GET http://localhost:3008/auth/logout
+###
+GET http://localhost:3008/auth/

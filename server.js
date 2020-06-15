@@ -1,0 +1,76 @@
+require("dotenv").config();
+PORT = 3008;
+const cors = require("cors");
+const express = require("express");
+const app = express();
+
+const session = require("express-session");
+const TWO_HOURS = 1000 * 60 * 60 * 2;
+
+const mongoose = require("mongoose");
+
+const MongoStore = require('connect-mongo')(session);
+
+mongoose.connect(process.env.DATABASE_URL_ALAS, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+mongoose.set("useCreateIndex", true);
+db.on("error", (error) => console.log(error));
+
+db.once("open", () => console.log("Connected to database"));
+
+app.use(cors());
+app.use(express.json());
+app.use(cors({ credentials: true, origin: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+const {
+
+  NODE_ENV = "development",
+
+  SESS_NAVE = "sid",
+  SESS_SECRET = "ssh!quiet,it'asecret!",
+  SESS_LIFETIME = TWO_HOURS,
+} = process.env;
+
+const IN_PROD = NODE_ENV === "Production";
+
+
+app.use(
+  session({
+    name: process.env.SESSION_NAME,
+    resave: false,
+    saveUninitialized: false,
+    secret: SESS_SECRET,
+    store:new MongoStore ({mongooseConnection: db}),
+    cookie: {
+      maxAge: SESS_LIFETIME,
+      sameSite: true,
+      secure: IN_PROD,
+    },
+  })
+);
+
+app.use('*/admin*', (req, res , next) => {
+
+if (!req.session.userId){
+  return res.status(401).json({message: 'du har ikke adgang'})
+}
+next();
+} )
+
+
+const re = require("./routes/gaader.routes");
+app.use("/gaader", re);
+
+const ra = require("./routes/bruger.routes");
+app.use("/admin/b", ra);
+
+const Auth = require("./routes/auth.routes");
+app.use("/auth", Auth);
+
+app.listen(PORT, function (cors) {
+  console.log("server start <3" + " server er ok :))");
+});

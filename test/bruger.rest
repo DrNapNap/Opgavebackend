@@ -1,0 +1,18 @@
+
+GET http://localhost:3008/b/Bruger
+
+
+###
+POST   http://localhost:3008/admin/b/
+content-type: application/json
+
+{ 
+    "brugernavn": "dawhuuhdwadsa",
+     "email": "uudguy@geml.com",
+     "password": "ddwadwa£####4@@@31231HFHFH"
+    }
+
+
+###
+
+DELETE http://localhost:3007/b/5ee0b8d5f8ac304310e68349

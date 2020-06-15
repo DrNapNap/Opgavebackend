@@ -1,0 +1,16 @@
+
+GET http://localhost:3008/Gaader/gaader
+
+
+###
+POST   http://localhost:3008/gaader/admin
+content-type: application/json
+
+{ 
+    "gaade": ":))", "svar": "uuguy"  
+    }
+
+
+###
+
+DELETE http://localhost:3008/gaader/admin/5ee353185aa1c5426ca14548
