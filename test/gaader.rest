@@ -3,12 +3,25 @@ GET http://localhost:3008/Gaader/gaader
 
 
 ###
+GET  https://gaaders.herokuapp.com/Gaader/gaader
+
+###
 POST   http://localhost:3008/gaader/admin
 content-type: application/json
 
 { 
     "gaade": ":))", "svar": "uuguy"  
     }
+
+
+###
+POST  https://gaaders.herokuapp.com/gaader/admin
+content-type: application/json
+
+{ 
+    "gaade": ":))", "svar": "uuguy"  
+    }
+
 
 
 ###

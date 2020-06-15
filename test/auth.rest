@@ -1,5 +1,5 @@
 
-POST http://localhost:3008/auth/login
+POST https://gaaders.herokuapp.com/auth/login
 content-type: application/json
 
 { 
@@ -8,5 +8,9 @@ content-type: application/json
     }
 ###
 GET http://localhost:3008/auth/logout
+
+###
+GET https://gaaders.herokuapp.com/auth/logout
+
 ###
 GET http://localhost:3008/auth/
