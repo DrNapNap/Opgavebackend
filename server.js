@@ -39,15 +39,15 @@ const IN_PROD = NODE_ENV === "Production";
 
 app.use(
   session({
-    name: SESS_NAVE,
-    resave: false,
-    saveUninitialized: false,
-    secret: SESS_SECRET,
+  name: process.env.SESSION_NAME,
+  resave:true,
+  rolling:true,
+  saveUninitialized:false,
     store:new MongoStore ({mongooseConnection: db}),
     cookie: {
-      maxAge: SESS_LIFETIME,
-      sameSite: true,
-      secure: IN_PROD,
+      maxAge: TWO_HOURS,
+    sameSite: true,,
+    secure:false
     },
   })
 );
