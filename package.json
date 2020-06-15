@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "npm": "6.0"
+    "npm": "6.0",
+    "node": "14.0"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
