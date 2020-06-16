@@ -23,7 +23,6 @@ db.once("open", () => console.log("Connected to database"));
 
 app.use(cors({credentials: true, origin: true }));
 app.use(express.json());
-app.use(cors({ credentials: true, origin: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 const {
@@ -49,7 +48,7 @@ app.use(
     store:new MongoStore ({mongooseConnection: db}),
     cookie: {
       maxAge: TWO_HOURS,
-    sameSite: true,
+    sameSite: "none",
     secure:false,
     httpOnly: true
     },
