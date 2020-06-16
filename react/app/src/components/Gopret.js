@@ -12,8 +12,10 @@ function Gopret() {
   const sendG = e => {
     e.preventDefault();
     //send til backend
+
+
     axios
-      .post("https://gaaders.herokuapp.com/gaader/", gaader)
+      .post("https://gaaders.herokuapp.com/gaader/admin", gaader)
       .then(res => {
         console.log(res.data);
       })

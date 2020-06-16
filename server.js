@@ -72,6 +72,6 @@ app.use("/admin/b", ra);
 const Auth = require("./routes/auth.routes");
 app.use("/auth", Auth);
 
-app.listen(PORT, function (cors) {
+app.listen(PORT, function () {
   console.log("server start <3" + " server er ok :))");
 });

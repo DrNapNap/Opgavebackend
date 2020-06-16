@@ -15,7 +15,7 @@ content-type: application/json
 
 
 ###
-PATCH   https://gaaders.herokuapp.com/gaader/
+PATCH   https://gaaders.herokuapp.com/gaader/admin
 content-type: application/json
 
 { 

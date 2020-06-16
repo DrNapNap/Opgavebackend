@@ -10,7 +10,7 @@ function Godelete() {
   useEffect(() => {
     (async () => {
       try {
-        let respons = await axios.get("https://gaaders.herokuapp.com/gaader/" + _Post);
+        let respons = await axios.get("https://gaaders.herokuapp.com/admin/gaader/" + _Post);
         setJoke(await respons.data);
       } catch (error) {
         console.log("fejl", error);
@@ -21,7 +21,7 @@ function Godelete() {
   const handleSletJoke = (e) => {
     // Her med alm. axios med .then().catch() ... kan også laves som async-await som ex herover
     axios
-      .delete("https://gaaders.herokuapp.com/gaader/" + _Post)
+      .delete("https://gaaders.herokuapp.com/admin/gaader/" + _Post)
       .then((res) => {
         console.log(res.data);
         // tilbage til admin-startsiden (tilpas adressen så den passer - se i app.js)

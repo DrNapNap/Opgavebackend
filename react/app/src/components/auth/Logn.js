@@ -15,7 +15,9 @@ function Logn() {
     .post("https://gaaders.herokuapp.com/auth/login", gaader)
       .then((res) => {
         console.log(res.data);
-        history.push("/Admin");
+        
+       // history.push("/Admin");
+        
       })
       .catch((err) => {
         console.log(err);
@@ -26,23 +28,21 @@ function Logn() {
     <div className="row">
       <div className="col">
         <h1 className="my-4">Ret gaader</h1>
-        <form onSubmit={retoke}>
+        <form  onSubmit={retoke} action='/login'>
           <div className="form-group">
             <input
               onChange={(e) => setGaader({ ...gaader, email: e.target.value })}
-              name="overskrift"
               className="form-control"
-              placeholder="Jokens overskrift"
+              type='email' name='email' placeholder='Email'
             />
           </div>
           <div className="form-group">
             <input
               
               onChange={(e) => setGaader({ ...gaader, password: e.target.value })}
-              name="setGaader"
+
               className="form-control"
-              rows="3"
-              placeholder="setGaader her...."
+              type='password' name='password' placeholder='Password'
             ></input>
           </div>
          
