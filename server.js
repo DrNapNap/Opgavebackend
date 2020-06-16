@@ -50,7 +50,8 @@ app.use(
     cookie: {
       maxAge: TWO_HOURS,
     sameSite: true,
-    secure:false
+    secure:false,
+    httpOnly: true
     },
   })
 );

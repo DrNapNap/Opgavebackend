@@ -15,7 +15,7 @@ function Gopret() {
 
 
     axios
-      .post("https://gaaders.herokuapp.com/gaader/admin", gaader)
+      .post("https://gaaders.herokuapp.com/gaader/admin", gaader, {withCredentials: true})
       .then(res => {
         console.log(res.data);
       })
