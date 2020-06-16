@@ -37,6 +37,7 @@ const {
 
 const IN_PROD = NODE_ENV === "Production";
 
+app.set('trust proxy',1)
 
 app.use(
   session({
@@ -53,6 +54,7 @@ app.use(
     },
   })
 );
+
 
 app.use('*/admin*', (req, res , next) => {
 
