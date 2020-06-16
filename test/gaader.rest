@@ -15,11 +15,11 @@ content-type: application/json
 
 
 ###
-POST  https://gaaders.herokuapp.com/gaader/admin
+PATCH   https://gaaders.herokuapp.com/gaader/
 content-type: application/json
 
 { 
-    "gaade": ":))", "svar": "uuguy"  
+    "gaade": ":DWA))", "svar": "uuguy"  
     }
 
 

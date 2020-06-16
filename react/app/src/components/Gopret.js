@@ -6,17 +6,16 @@ import { useHistory } from 'react-router-dom'
 function Gopret() {
   //state
 
-  const [joke, setJoke] = useState({});
+  const [gaader, setGaader] = useState({});
   const history = useHistory();
 
-  const sendJoke = e => {
+  const sendG = e => {
     e.preventDefault();
     //send til backend
     axios
-      .post("https://gaaders.herokuapp.com/gaader/admin", joke)
+      .post("https://gaaders.herokuapp.com/gaader/", gaader)
       .then(res => {
         console.log(res.data);
-        history.push("/Admin")
       })
       .catch((err) => {
         console.log(err);
@@ -24,17 +23,17 @@ function Gopret() {
   };
 
   return (
-    <form onSubmit={sendJoke} className="row col-3 m-auto">
-      <h1 className="text-center col-12 display-4 p-1">Opret ny joke</h1>
+    <form onSubmit={sendG} className="row col-3 m-auto">
+      <h1 className="text-center col-12 display-4 p-1">Opret ny gåder</h1>
       <br />
       <div className="form-group col-12">
         <br />
         <label className="fon2 display-4" htmlFor="formGroupExampleInput">
-          Joke overskrift
+          gåder overskrift
         </label>
         <input
           className="col-12 form-control"
-          onChange={e => setJoke({ ...joke, gaade: e.target.value })}
+          onChange={e => setGaader({ ...gaader, gaade: e.target.value })}
           type="text"
           
           id="formGroupExampleInput"
@@ -48,18 +47,16 @@ function Gopret() {
         <input
           type="text"
           className="form-control"
-          onChange={e => setJoke({ ...joke, svar: e.target.value })}
+          onChange={e => setGaader({ ...gaader, svar: e.target.value })}
           id="formGroupExampleInput2"
           placeholder="Tekst"
         />
       </div>
       <button type="submit" className="btn btn-info m-auto">
-        Opret ny joke
+        Opret ny gaade
       </button>
 
-      <button onClick={() => {history.push("/Admin")}} type="submit" className="btn btn-info m-auto">
-        Gå til Admin
-      </button>
+
     </form>
   );
 }
